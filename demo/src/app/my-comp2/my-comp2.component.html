@@ -1,0 +1,32 @@
+<p>
+  my-comp2 works!
+</p>
+<h3>Add/Remove Table</h3>
+<button (click)="toggleDiv()">Toggle</button>
+<h2>Employee Details using *ngFor</h2>
+
+  <div [ngClass] = "{'admin' : themeVar == 'admin', 'enduser' : themeVar == 'enduser'}">
+<table border="2">
+<tr>
+  <th>EmpID</th>
+  <th>EmpName</th>
+  <th>EmpMarks</th>
+</tr>
+<tr *ngFor="let ename of myEmp"  [ngStyle]="{'background-color':ename.eId%2 === 0 ? 'orange' : 'red'}">
+  <td>{{ename.eId}}</td>
+  <td>{{ename.eName}}</td>
+  <td>{{ename.emarks}}</td>
+</tr>
+</table>
+</div>
+<h2>Example of Switch Case</h2>
+<div [ngSwitch]="stateName">
+  <div *ngSwitchCase="'Maharashtra'">{{stateCode}}</div>
+  <div *ngSwitchCase="'UP'">23456</div>
+  <div *ngSwitchCase="'MP'">6789</div>
+  <div *ngSwitchDefault>12345</div>
+</div>
+<div appMyStyleDir>
+  This is test of custom directive...
+</div>
+<!---<div [ngStyle]="{'background-color':ename}"-->
